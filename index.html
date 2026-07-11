@@ -1674,18 +1674,20 @@ function storageSet(key, value) {
 // Fine for a small app among friends; if you want it locked down properly later, that needs
 // Firebase Authentication wired in - ask and I can add it.
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY_HERE",
-  authDomain: "PASTE_YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "PASTE_YOUR_SENDER_ID",
-  appId: "PASTE_YOUR_APP_ID",
+  apiKey: "AIzaSyB5jFCtOT8JTI640e4Ta6cDZr0nmFe36ig",
+  authDomain: "wawadas.firebaseapp.com",
+  projectId: "wawadas",
+  storageBucket: "wawadas.firebasestorage.app",
+  messagingSenderId: "945047600133",
+  appId: "1:945047600133:web:32bd08ddb8a22be8f4306c",
+  measurementId: "G-1W0RBZNYP5"
 };
 // Guards against the placeholder values above so an unconfigured app shows a clear setup
 // screen instead of silently failing every signup/login with no explanation.
 const FIREBASE_CONFIGURED = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith("PASTE_YOUR"));
 if (FIREBASE_CONFIGURED) firebase.initializeApp(firebaseConfig);
 const db = FIREBASE_CONFIGURED ? firebase.firestore() : null;
+
 
 const accountsCol = FIREBASE_CONFIGURED ? db.collection("bjsenjer_accounts") : null;
 const profilesCol = FIREBASE_CONFIGURED ? db.collection("bjsenjer_profiles") : null;
