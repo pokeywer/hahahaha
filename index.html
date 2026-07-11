@@ -1688,7 +1688,6 @@ const FIREBASE_CONFIGURED = !!(firebaseConfig.apiKey && !firebaseConfig.apiKey.s
 if (FIREBASE_CONFIGURED) firebase.initializeApp(firebaseConfig);
 const db = FIREBASE_CONFIGURED ? firebase.firestore() : null;
 
-
 const accountsCol = FIREBASE_CONFIGURED ? db.collection("bjsenjer_accounts") : null;
 const profilesCol = FIREBASE_CONFIGURED ? db.collection("bjsenjer_profiles") : null;
 const postsCol = FIREBASE_CONFIGURED ? db.collection("bjsenjer_posts") : null;
